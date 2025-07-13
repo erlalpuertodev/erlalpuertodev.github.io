@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Back to Portfolio</a>
+    </nav>
+  </header>
+  <main>
+    <section class="projects">
+      <h2>More Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-header-slideshow">
+              <img src="Images/P-CookingApp_1.png" alt="Project Image 1" class="slide active">
+              <img src="Images/P-CookingApp_2.png" alt="Project Image 2" class="slide">
+              <img src="Images/P-CookingApp_3.png" alt="Project Image 3" class="slide">
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Cooking Ina Application</h3>
+            <p>Cooking Ina is a recipe app that guides users through cooking steps and estimates ingredient amounts based on the quantity of meat entered.</p>
+            <div class="project-techs">
+              <span>Java</span>
+              <span>Eclipse IDE</span>
+              <span>Canva</span>
+            </div>
+          </div>
+          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+            <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
+            <span>Documentation</span>
+          </a>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-header-slideshow">
+              <img src="Images/image-1.png" alt="Project Image 1" class="slide active">
+              <img src="Images/image-2.png" alt="Project Image 2" class="slide">
+              <img src="Images/image-3.png" alt="Project Image 3" class="slide">
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Project Title</h3>
+            <p>Short project description goes here.</p>
+            <div class="project-techs">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </div>
+          </div>
+          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+            <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
+            <span>Documentation</span>
+          </a>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-header-slideshow">
+              <img src="Images/image-1.png" alt="Project Image 1" class="slide active">
+              <img src="Images/image-2.png" alt="Project Image 2" class="slide">
+              <img src="Images/image-3.png" alt="Project Image 3" class="slide">
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Project Title</h3>
+            <p>Short project description goes here.</p>
+            <div class="project-techs">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </div>
+          </div>
+          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+            <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
+            <span>Documentation</span>
+          </a>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-header-slideshow">
+              <img src="Images/image-1.png" alt="Project Image 1" class="slide active">
+              <img src="Images/image-2.png" alt="Project Image 2" class="slide">
+              <img src="Images/image-3.png" alt="Project Image 3" class="slide">
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Project Title</h3>
+            <p>Short project description goes here.</p>
+            <div class="project-techs">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </div>
+          </div>
+          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+            <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
+            <span>Documentation</span>
+          </a>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-header-slideshow">
+              <img src="Images/image-1.png" alt="Project Image 1" class="slide active">
+              <img src="Images/image-2.png" alt="Project Image 2" class="slide">
+              <img src="Images/image-3.png" alt="Project Image 3" class="slide">
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Project Title</h3>
+            <p>Short project description goes here.</p>
+            <div class="project-techs">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </div>
+          </div>
+          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+            <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
+            <span>Documentation</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <svg style="display:none;">
+      <symbol id="icon-doc" viewBox="0 0 24 24">
+        <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5V9h5.5L13 3.5zM6 4h6v5a1 1 0 0 0 1 1h5v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/>
+      </symbol>
+    </svg>
+  </main>
+  <script>
+// Project Card Slideshow on Hover
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+  const slideshow = card.querySelector('.project-header-slideshow');
+  if (!slideshow) return;
+  const slides = slideshow.querySelectorAll('.slide');
+  let current = 0;
+  let interval = null;
+
+  function showSlide(idx) {
+    slides.forEach((img, i) => {
+      img.classList.toggle('active', i === idx);
+    });
+  }
+
+  card.addEventListener('mouseenter', () => {
+    if (slides.length <= 1) return;
+    let idx = 0;
+    interval = setInterval(() => {
+      idx = (idx + 1) % slides.length;
+      showSlide(idx);
+    }, 1000);
+  });
+
+  card.addEventListener('mouseleave', () => {
+    clearInterval(interval);
+    showSlide(0);
+  });
+});
+</script>
+</body>
+</html> 
