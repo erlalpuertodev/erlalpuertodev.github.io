@@ -1,6 +1,159 @@
 /* Modern Portfolio Styles with Glassmorphism */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+/* Hero Actions and Visitor Counter Styles */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic-container {
+  position: relative;
+}
+
+.visitor-counter {
+  position: absolute;
+  top: -170px;
+  left: -170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  animation: floatingLight 3s ease-in-out infinite;
+}
+
+.visitor-counter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 242, 200, 0.3), transparent);
+  animation: lightSweep 4s ease-in-out infinite;
+}
+
+.visitor-counter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 242, 200, 0.1), transparent);
+  border-radius: 25px;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+
+
+.visitor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+  text-align: center;
+}
+
+.visitor-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.visitor-count {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 800;
+  color: #63f2c8;
+  text-shadow: 0 0 15px rgba(99, 242, 200, 0.6);
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  animation: numberGlow 3s ease-in-out infinite;
+}
+
+/* Light effect animations */
+@keyframes floatingLight {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% { 
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 8px 30px rgba(99, 242, 200, 0.2);
+  }
+}
+
+@keyframes lightSweep {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+
+
+@keyframes numberGlow {
+  0%, 100% { 
+    text-shadow: 0 0 15px rgba(99, 242, 200, 0.6);
+  }
+  50% { 
+    text-shadow: 0 0 25px rgba(99, 242, 200, 0.8);
+  }
+}
+
+.visitor-counter.updating {
+  animation: counterPulse 0.6s ease-in-out, elegantGlow 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+
+  
+  .visitor-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .visitor-label {
+    font-size: 0.6rem;
+  }
+  
+  .visitor-count {
+    font-size: 1rem;
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
@@ -319,10 +472,18 @@ header {
   border-radius: 50%;
   border: 4px solid rgba(99, 242, 200, 0.3);
   box-shadow: 0 0 30px rgba(99, 242, 200, 0.2);
-  transition: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
   position: relative;
   z-index: 2;
+  cursor: pointer;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  border-color: rgba(0, 255, 208, 0.962);
+  box-shadow: 0 0 50px rgb(0, 255, 213);
+  filter: brightness(1.1) contrast(1.05);
 }
 
 .profile-pic::before {

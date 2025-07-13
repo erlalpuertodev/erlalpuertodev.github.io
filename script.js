@@ -358,9 +358,27 @@ projectCards.forEach(card => {
 const counter = document.querySelector(".visitor-count");
 
 async function updateCounter() {
-    let response = await fetch("https://deet4hizp44u4o73rux5x6o5im0kudci.lambda-url.ap-southeast-2.on.aws/");
-    let data = await response.json();
-    counter.innerHTML = ` ${data}`;
+    try {
+        let response = await fetch("https://deet4hizp44u4o73rux5x6o5im0kudci.lambda-url.ap-southeast-2.on.aws/");
+        let data = await response.json();
+        
+        // Add elegant animation class
+        const counterContainer = counter.closest('.visitor-counter');
+        counterContainer.classList.add('updating');
+        
+        // Update counter with elegant transition
+        counter.innerHTML = data;
+        
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            counterContainer.classList.remove('updating');
+        }, 600);
+        
+    } catch (error) {
+        console.error('Error updating visitor counter:', error);
+        counter.innerHTML = '0';
+    }
 }
 
+// Update counter on page load
 updateCounter();
