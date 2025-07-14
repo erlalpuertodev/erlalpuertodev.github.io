@@ -42,93 +42,8 @@ skillCards.forEach(card => {
 
 
 // Enhanced contact form with validation
-const contactForm = document.querySelector('#contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !message) {
-      showNotification('Please fill in all fields', 'error');
-      return;
-    }
-    
-    if (!isValidEmail(email)) {
-      showNotification('Please enter a valid email address', 'error');
-      return;
-    }
-    
-    // Simulate form submission
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-      showNotification('Thank you for your message! I will get back to you soon.', 'success');
-      this.reset();
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }, 2000);
-  });
-}
 
-// Email validation function
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-  // Remove existing notifications
-  const existingNotification = document.querySelector('.notification');
-  if (existingNotification) {
-    existingNotification.remove();
-  }
-  
-  // Create notification
-  const notification = document.createElement('div');
-  notification.className = `notification notification-${type}`;
-  notification.textContent = message;
-  notification.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: ${type === 'success' ? 'rgba(99, 242, 200, 0.9)' : 'rgba(255, 100, 100, 0.9)'};
-    color: #0a0a0a;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 600;
-    z-index: 10000;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  `;
-  
-  document.body.appendChild(notification);
-  
-  // Show notification
-  setTimeout(() => {
-    notification.style.transform = 'translateX(0)';
-  }, 10);
-  
-  // Hide notification after 4 seconds
-  setTimeout(() => {
-    notification.style.transform = 'translateX(100%)';
-    setTimeout(() => {
-      if (notification.parentNode) {
-        notification.remove();
-      }
-    }, 300);
-  }, 4000);
-}
+// (Contact form JS removed)
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -382,3 +297,29 @@ async function updateCounter() {
 
 // Update counter on page load
 updateCounter();
+
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+
+  try {
+    const response = await fetch("https://bgoxf9u74e.execute-api.ap-southeast-2.amazonaws.com/redeploy/contact", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    alert(result.message);
+  } catch (err) {
+    console.error('Error submitting form:', err);
+    alert("There was a problem submitting the form.");
+  }
+});

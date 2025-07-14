@@ -853,13 +853,7 @@ section h2 svg {
 }
 
 /* Projects Section */
-.projects {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  margin: 2rem auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 /* Wide Project Card Layout */
 .project-list {
@@ -1214,7 +1208,7 @@ footer {
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(20px);
   text-align: center;
-  padding: 2rem;
+  padding: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -1438,13 +1432,7 @@ section,
 }
 
 /* Certificates Section */
-.certificates {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  margin: 2rem auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 .certificate-grid {
   display: grid;
@@ -2464,6 +2452,9 @@ html {
   text-align: justify;
 }
 
+.contact-info #location {
+  color: #63f2c8;
+}
 
 
 
