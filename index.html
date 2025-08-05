@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erl Herold C. Alpuerto | Portfolio</title>
+  <title>ErlAlpuertoDev</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="icon" type="image/x-icon" href="Images/Web_Logo.png">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <a href="#home" class="logo">ErlAlpuertoDev</a>
+      <a href="#home" class="logo">
+        <img src="Images/Web_Logo.png" alt="ErlAlpuertoDev Logo" class="logo-img">
+        <span class="logo-text">ErlAlpuertoDev</span>
+      </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -34,12 +37,6 @@
         <div class="hero-image">
           <div class="profile-pic-container">
             <img src="Images\New-PP.png" alt="Erl Herold C. Alpuerto" class="profile-pic">
-            <div class="visitor-counter glass">
-              <div class="visitor-info">
-                <span class="visitor-label">Visitors</span>
-                <span class="visitor-count">0</span>
-              </div>
-            </div>
           </div>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/erlalpuerto/" aria-label="LinkedIn" title="LinkedIn" target="_blank">
@@ -79,7 +76,7 @@
             <span class="letter">o</span>
           </h1>
           <h2 class="hero-subtitle">I'm a Computer Engineer</h2>
-          <p>Welcome to my portfolio! a showcase of my work, skills, and passion as a Computer Engineering graduate. This site is built to present my projects, demonstrate my technical capabilities, and reflect my journey toward a professional career in tech.</p>
+          <p>Welcome to my portfolio! a showcase of my work, skills, and passion as a Computer Engineering graduate aspiring to be a DevOps Engineer. This site is built to present my projects, demonstrate my technical capabilities, and reflect my journey toward a professional career in tech.</p>
           <div class="hero-actions">
             <a href="C:\Users\erler\Downloads\ALPUERTO, Erl-Herold_RESUME.pdf" class="btn" download target="_blank">Download Resume</a>
           </div>
@@ -414,7 +411,7 @@
               <span>CloudFront</span>
             </div>
           </div>
-          <a class="project-doc-link" href="#" target="_blank" title="View Documentation">
+          <a class="project-doc-link" href="https://github.com/erlalpuertodev/erlalpuertodev.github.io" target="_blank" title="View Documentation">
             <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><use href="#icon-doc"/></svg>
             <span>Documentation</span>
           </a>
@@ -473,18 +470,44 @@
     <section id="contact" class="contact">
       <h2><svg width="32" height="32" fill="currentColor" style="margin-right: 10px; vertical-align: middle;"><use href="#icon-mail"/></svg>Contact</h2>
       <div class="contact-content">
-        <div class="contact-info">
-          <p><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=erlapuertodev@gmail.com" target="_blank">erlapuertodev@gmail.com</a></p>
-          <p><strong>Location:</strong> <span id="location">Lucena City, Quezon, Philippines</span></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/erlalpuerto/" target="_blank">linkedin.com/in/erlalpuerto</a></p>
-          <p><strong>GitHub:</strong> <a href="#" target="_blank">github.com/erlherold</a></p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <svg width="24" height="24" fill="currentColor" class="contact-icon">
+              <use href="#icon-mail"/>
+            </svg>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:erlapuertodev@gmail.com" target="_blank">erlapuertodev@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" fill="currentColor" class="contact-icon">
+              <use href="#icon-location"/>
+            </svg>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <a href="https://maps.app.goo.gl/aVe9PfbPFR6HDs5d7" target="_blank">Lucena City, Quezon, Philippines</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" fill="currentColor" class="contact-icon">
+              <use href="#icon-linkedin"/>
+            </svg>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/erlalpuerto/" target="_blank">linkedin.com/in/erlalpuerto</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg width="24" height="24" fill="currentColor" class="contact-icon">
+              <use href="#icon-github"/>
+            </svg>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <a href="https://github.com/erlalpuertodev" target="_blank">github.com/erlalpuertodev</a>
+            </div>
+          </div>
         </div>
-        <form class="contact-form" id="contactForm">
-          <input type="text" id="name" placeholder="Name" required>
-          <input type="email" id="email" placeholder="Email" required>
-          <textarea id="message" placeholder="Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </div>
     </section>
   </main>
@@ -514,36 +537,10 @@
     <symbol id="icon-mail" viewBox="0 0 24 24">
       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
     </symbol>
-    <symbol id="icon-html" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+    <symbol id="icon-location" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
     </symbol>
-    <symbol id="icon-javascript" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-python" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-cpp" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-react" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-nodejs" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-git" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-chip" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </symbol>
-    <symbol id="icon-certificate" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4-8c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4 4zm2.4-6.4C14.55 2.1 12.8 3.84 12 5.97c-.84-2.13-2.58-3.87-4.8-4.92-4.2 2.16.84 6.72 2.4 9.6 7.2z"/>
-    </symbol>
-    <symbol id="icon-award" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4-8c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4 4zm2.4-6.4C14.55 2.1 12.8 3.84 12 5.97c-.84-2.13-2.58-3.87-4.8-4.92-4.2 2.16.84 6.72 2.4 9.6 7.2z"/>
-    </symbol>
+
     <symbol id="icon-person" viewBox="0 0 24 24">
       <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
       <path d="M4 20c0-4 16-4 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
